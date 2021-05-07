@@ -84,6 +84,7 @@ let canProceed = async () => {
     if (validateInput()) {
         let nameOfSong = document.getElementById('name-of-song').value
         let authorOfSong = document.getElementById('author-of-song').value
+        
         let allowedToProceed =  new Promise((resolve, reject) => {
             if (confirm(`Do you wish to add song ${nameOfSong} by ${authorOfSong}?`)) {
                 
