@@ -1,5 +1,5 @@
 
-export let validateInput = async () => {
+export let validateInput = () => {
     let nameOfSong = document.getElementById('name-of-song').value
     let authorOfSong = document.getElementById('author-of-song').value
 
