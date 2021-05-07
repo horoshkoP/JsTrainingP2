@@ -113,23 +113,15 @@ let canProceed = async () => {
     }
 }
 
-let listHasItems = async (list) => {
-    let listCheck = new Promise((resolve, reject) => {
-        if (list.songAssembly.length !== 0) {
-            resolve('list will be cleared')
-        }
-        
-        reject('list will be left intact')
-        
-        
-    })
-    handleError(listCheck)
+let listHasItems = (list) => {
+    return (list.songAssembly.length !== 0 && confirm('Do you wish to clear the list?'))
 }
 
-let clearList = async () => {
-    await listHasItems(songList)
-    alert('list will be cleared')
-    songList.clearList()
+let clearList = () => {
+    
+    if (listHasItems(songList)) {
+        songList.clearList()
+    }
     
     
 }
